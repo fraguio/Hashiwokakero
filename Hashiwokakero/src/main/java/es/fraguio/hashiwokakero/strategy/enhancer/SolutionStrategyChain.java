@@ -21,8 +21,8 @@ import es.fraguio.hashiwokakero.board.Board;
  * Ejecuta un conjunto de {@link ISolutionStrategy estrategias de solución} de
  * manera iterativa por ciclos completos, entendiendo por ciclo completo la
  * ejecución de todas las {@link ISolutionStrategy estrategias de solución} que
- * contiene una instancia de esta clase que recibe a través de su
- * {@link SolutionStrategyChain#AlternativeSolutionStrategy(ISolutionStrategy...)
+ * contiene una instancia de esta clase y que recibe a través de su
+ * {@link SolutionStrategyChain#SolutionStrategyChain(ISolutionStrategy...)
  * constructor}. Esta estrategia de solución deja de {@link #apply(Board)
  * aplicarse} en el momento que un ciclo completo no es capaz que construir
  * ningún puente.

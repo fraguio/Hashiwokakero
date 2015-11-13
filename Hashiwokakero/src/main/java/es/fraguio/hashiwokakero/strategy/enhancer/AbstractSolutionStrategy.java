@@ -24,12 +24,12 @@ import es.fraguio.hashiwokakero.strategy.BridgeDesign;
 
 /**
  * Estrategia de solución abstracta que permita resolver total o parcialmente un
- * tablero. Dicho de otro modo, se trata de crear estrategias de solución
- * inequívocas en el trazado de puentes de una, varias o todas las islas del
- * tablero. Contiene un conjunto de {@link ISourceIslandSelector estrategias de
- * selección de islas de origen} y un {@link IBridgeDesigner diseñador} de
- * {@link BridgeDesign tipos de puente} que se aplicarán a las islas de origen
- * seleccionadas.
+ * tablero. Las implementaciones que contiene este proyecto son soluciones
+ * parciales pero inequívocas, en el trazado de puentes entre islas, con el fin
+ * de optimizar los tiempos de resolución.Contiene un conjunto de
+ * {@link ISourceIslandSelector estrategias de selección de islas de origen} y
+ * un {@link IBridgeDesigner diseñador} de {@link BridgeDesign tipos de puente}
+ * que se aplicarán a las islas de origen seleccionadas.
  * 
  * @author Eduardo Nogueira Fraguío
  */

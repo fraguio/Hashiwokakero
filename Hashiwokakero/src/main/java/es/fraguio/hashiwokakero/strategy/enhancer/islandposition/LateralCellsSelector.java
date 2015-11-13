@@ -21,16 +21,18 @@ import es.fraguio.hashiwokakero.board.cell.enums.CellAlign;
 import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
- * Estrategia de comienzo que selecciona aquellas islas que sabemos que tienen
- * puentes en todas direcciones, ya sea simples o dobles, y que no están en
- * ninguna esquina o ningún lateral del tablero.
+ * Selecciona aquellas islas que estén en un lateral del tablero y su número
+ * total de puentes sea 6. Sabremos con toda seguridad que trazando puentes
+ * dobles en todas las direcciones posibles, éstos estarán bien trazados.
+ * 
+ * @see #isMatchingCriteria(IslandCell)
  * 
  * @author Eduardo Nogueira Fraguío
  */
 public enum LateralCellsSelector implements ISourceIslandSelector {
 
 	INSTANCE;
-	
+
 	// ---------------------------------------------------- Instance Properties
 
 	/**

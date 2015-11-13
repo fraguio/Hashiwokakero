@@ -34,8 +34,8 @@ public class IslandCellIterator implements Iterator<IslandCell> {
 	private BoardIterator boardIterator;
 
 	/**
-	 * Siguiente celda que devuelve
-	 * {@link IslandCellIterator#boardIterator#nextCell}
+	 * Siguiente celda que devuelve {@link IslandCellIterator#boardIterator
+	 * #nextCell}
 	 */
 	private Cell nextCell;
 
@@ -45,8 +45,8 @@ public class IslandCellIterator implements Iterator<IslandCell> {
 	 * Constructor del iterador que recibe el {@link BoardIterator iterador} del
 	 * tablero.
 	 * 
-	 * @param cells
-	 *            celdas del tablero.
+	 * @param boardIterator
+	 *            iterador sobre todas las celdas del tablero.
 	 */
 	public IslandCellIterator(BoardIterator boardIterator) {
 		this.boardIterator = boardIterator;

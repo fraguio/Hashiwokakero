@@ -20,6 +20,12 @@ import es.fraguio.hashiwokakero.strategy.enhancer.IBridgeDesigner;
 import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
+ * Selecciona las islas cuyo criterio define este
+ * {@link UnbuiltBridgesNumberSelector#isMatchingCriteria(es.fraguio.hashiwokakero.board.cell.IslandCell)
+ * selector} y construye los tipos de puente que determina este
+ * {@link BridgesNumberBridgeDesigner#getBridgeDesigns(es.fraguio.hashiwokakero.board.Board, es.fraguio.hashiwokakero.board.cell.IslandCell)
+ * diseñador}.
+ * 
  * @author Eduardo Nogueira Fraguío
  */
 public class BridgesNumberSolutionStrategy extends AbstractSolutionStrategy {
@@ -27,8 +33,7 @@ public class BridgesNumberSolutionStrategy extends AbstractSolutionStrategy {
 	// ----------------------------------------------------------- Constructors
 
 	/**
-	 * Constructor privado que impide que se creen instancias de la clase desde
-	 * fuera de la misma.
+	 * Constructor.
 	 */
 	public BridgesNumberSolutionStrategy() {
 		super();

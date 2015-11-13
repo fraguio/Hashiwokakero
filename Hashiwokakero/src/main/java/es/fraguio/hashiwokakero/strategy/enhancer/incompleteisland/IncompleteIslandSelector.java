@@ -20,7 +20,8 @@ import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
  * Implementación de {@link ISourceIslandSelector} que forma parte de la
- * estrategia de solución {@link SourceEqualsTargetsSolutionStrategy}
+ * estrategia de solución {@link SourceEqualsTargetsSolutionStrategy}.
+ * Selecciona aquellas islas que no tienen todos sus puentes construídos.
  * 
  * @see #isMatchingCriteria(IslandCell)
  * @author Eduardo Nogueira Fraguío

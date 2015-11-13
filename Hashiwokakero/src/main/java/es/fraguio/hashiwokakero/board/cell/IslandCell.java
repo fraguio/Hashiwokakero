@@ -19,7 +19,7 @@ import es.fraguio.hashiwokakero.board.cell.enums.CellAlign;
 import es.fraguio.hashiwokakero.board.cell.enums.Direction;
 
 /**
- * Representa una isla.
+ * Celda que representa una isla.
  * 
  * @author Eduardo Nogueira Fraguío
  */

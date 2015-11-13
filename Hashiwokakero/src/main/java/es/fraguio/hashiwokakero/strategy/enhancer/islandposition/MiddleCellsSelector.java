@@ -21,9 +21,12 @@ import es.fraguio.hashiwokakero.board.cell.enums.CellAlign;
 import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
- * Estrategia de comienzo que selecciona aquellas islas que sabemos que tienen
- * puentes dobles en todas direcciones, y que no están en ninguna esquina o
- * ningún lateral del tablero.
+ * Selecciona aquellas islas cuyo número total de puentes es igual a 8 y que no
+ * están en ninguna esquina o ningún lateral del tablero. Sabremos con toda
+ * seguridad que trazando puentes dobles en todas las direcciones posibles,
+ * éstos estarán bien trazados.
+ * 
+ * @see #isMatchingCriteria(IslandCell)
  * 
  * @author Eduardo Nogueira Fraguío
  */

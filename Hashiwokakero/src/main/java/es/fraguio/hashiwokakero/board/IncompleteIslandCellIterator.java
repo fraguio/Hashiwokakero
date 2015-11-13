@@ -40,15 +40,13 @@ public class IncompleteIslandCellIterator implements Iterator<IslandCell> {
 	// ----------------------------------------------------------- Constructors
 
 	/**
-	 * Constructor del iterador que recibe el {@link BoardIterator iterador} del
-	 * tablero.
+	 * Constructor del iterador que recibe un iterador de celdas de tipo isla.
 	 * 
-	 * @param cells
-	 *            celdas del tablero.
+	 * @param islandCellIterator
+	 *            iterador sobre celdas de tipo isla.
 	 */
-	public IncompleteIslandCellIterator(
-			IslandCellIterator islandCellBoardIterator) {
-		this.islandCellBoardIterator = islandCellBoardIterator;
+	public IncompleteIslandCellIterator(IslandCellIterator islandCellIterator) {
+		this.islandCellBoardIterator = islandCellIterator;
 	}
 
 	// --------------------------------------------------------- Public Methods

@@ -20,6 +20,21 @@ import es.fraguio.hashiwokakero.strategy.enhancer.IBridgeDesigner;
 import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
+ * Estrategia de solución que, teniendo en cuenta la posición que ocupa una isla
+ * y el número de puentes que se trazan a partir de ésta, se aplica de forma
+ * inequívoca.
+ * <p />
+ * <ul>
+ * <li>Islas que se encuentran en las esquinas del tablero y tienen 4 puentes</li>
+ * <li>Islas que se encuentran en un lateral del tablero y tienen 6 puentes</li>
+ * <li>Islas que tienen 8 puentes</li>
+ * </ul>
+ * 
+ * @see CornersCellsSelector
+ * @see LateralCellsSelector
+ * @see MiddleCellsSelector
+ * @see ContiguousCellsBridgeDesigner
+ * 
  * @author Eduardo Nogueira Fraguío
  */
 public class IslandPositionSolutionStrategy extends AbstractSolutionStrategy {
