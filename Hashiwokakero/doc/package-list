@@ -1,0 +1,12 @@
+es.fraguio.hashiwokakero
+es.fraguio.hashiwokakero.board
+es.fraguio.hashiwokakero.board.cell
+es.fraguio.hashiwokakero.board.cell.enums
+es.fraguio.hashiwokakero.board.cell.exception
+es.fraguio.hashiwokakero.board.validator
+es.fraguio.hashiwokakero.strategy
+es.fraguio.hashiwokakero.strategy.enhancer
+es.fraguio.hashiwokakero.strategy.enhancer.bridgesnumber
+es.fraguio.hashiwokakero.strategy.enhancer.incompleteisland
+es.fraguio.hashiwokakero.strategy.enhancer.islandposition
+es.fraguio.hashiwokakero.util
