@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy.bridgesnumber;
+package es.fraguio.hashiwokakero.strategy.enhancer.incompleteisland;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,18 +24,19 @@ import es.fraguio.hashiwokakero.board.cell.IslandCell;
 import es.fraguio.hashiwokakero.board.cell.enums.Direction;
 import es.fraguio.hashiwokakero.board.cell.exception.CellException;
 import es.fraguio.hashiwokakero.strategy.BridgeDesign;
-import es.fraguio.hashiwokakero.strategy.IBridgeDesigner;
+import es.fraguio.hashiwokakero.strategy.enhancer.IBridgeDesigner;
 import es.fraguio.hashiwokakero.util.Constants;
 
 /**
  * Implementación de {@link IBridgeDesigner} que trabaja en conjunto con la
- * estrategia de selección {@link UnbuiltBridgesNumberSelector} para construir
- * la estrategia de solución {@link BridgesNumberSolutionStrategy}
+ * estrategia de selección {@link IncompleteIslandSelector} para
+ * construir la estrategia de solución
+ * {@link SourceEqualsTargetsSolutionStrategy}
  * 
  * @see #getBridgeDesigns(Board, IslandCell)
  * @author Eduardo Nogueira Fraguío
  */
-public enum BridgesNumberBridgeDesigner implements IBridgeDesigner {
+public enum IncompleteIslandBridgeDesigner implements IBridgeDesigner {
 
 	INSTANCE;
 
@@ -48,22 +48,13 @@ public enum BridgesNumberBridgeDesigner implements IBridgeDesigner {
 	 * teniendo en cuenta que una instancia de {@link BridgeDesign} nos indica
 	 * como trazar un puente simple o doble en una dirección determinada, sólo
 	 * devuelve la lista con instancias de {@link BridgeDesign} en los
-	 * siguientes casos:
-	 * <ul>
-	 * <li>Si el número de elementos de la lista de retorno es = 1 y el número
-	 * de puentes que faltan por trazar en la isla de origen también es = 1</li>
-	 * <li>Si el número de elementos de la lista de retorno es = 1 y el número
-	 * de puentes que faltan por trazar en la isla de origen también es = 2</li>
-	 * <li>Si el número de elementos de la lista de retorno es = 2 y el número
-	 * de puentes que faltan por trazar en la isla de origen también es = 4</li>
-	 * <li>Si el número de elementos de la lista de retorno es = 3 y el número
-	 * de puentes que faltan por trazar en la isla de origen también es = 5</li>
-	 * <li>Si el número de elementos de la lista de retorno es = 4 y el número
-	 * de puentes que faltan por trazar en la isla de origen también es = 8</li>
-	 * </ul>
-	 * En el resto de casos la lista de elementos que devuelve el método está
-	 * vacía, porque nadie nos asegura que podamos trazar los puentes de manera
-	 * inequívoca.
+	 * siguientes casos en los que el número total de puentes que se van a
+	 * trazar, la suma de {@link BridgeDesign#getNumBridges()} de todos los
+	 * elementos de la lista que devuelve el método, es igual al número total de
+	 * puentes que faltan por construir en la isla de origen
+	 * {@link IslandCell#getUnbuiltBridges()}. En el resto de casos la lista de
+	 * elementos que devuelve el método está vacía, porque nadie nos asegura que
+	 * podamos trazar los puentes de manera inequívoca.
 	 * 
 	 * @param board
 	 *            tablero de juego.
@@ -77,15 +68,18 @@ public enum BridgesNumberBridgeDesigner implements IBridgeDesigner {
 		List<BridgeDesign> bridgeDesigns = new ArrayList<BridgeDesign>(
 				Constants.DEFAULT_SIZE);
 		Direction[] directions = source.getPossibleDirections();
+		int totalBridges = 0;
 		for (Direction direction : directions) {
 			IslandCell target;
 			try {
 				target = board.getNextIslandCell(source, direction);
 				if (!target.isCompleted()) {
-					bridgeDesigns.add(new BridgeDesign(source, target,
-							direction,
-							(source.getUnbuiltBridges() == BigDecimal.ONE
-									.intValue()) ? false : true));
+					final boolean isDouble = (target.getUnbuiltBridges() > 1) ? true
+							: false;
+					BridgeDesign bridgeDesign = new BridgeDesign(source,
+							target, direction, isDouble);
+					bridgeDesigns.add(bridgeDesign);
+					totalBridges += bridgeDesign.getNumBridges();
 				}
 			} catch (CellException e) {
 
@@ -94,38 +88,7 @@ public enum BridgesNumberBridgeDesigner implements IBridgeDesigner {
 			}
 		}
 
-		switch (source.getUnbuiltBridges()) {
-		case 1:
-			if (BigDecimal.ONE.intValue() != bridgeDesigns.size()) {
-				bridgeDesigns = new ArrayList<BridgeDesign>(
-						Constants.DEFAULT_SIZE);
-			}
-			break;
-		case 2:
-			if (BigDecimal.ONE.intValue() != bridgeDesigns.size()) {
-				bridgeDesigns = new ArrayList<BridgeDesign>(
-						Constants.DEFAULT_SIZE);
-			}
-			break;
-		case 4:
-			if (Constants.INT_2 != bridgeDesigns.size()) {
-				bridgeDesigns = new ArrayList<BridgeDesign>(
-						Constants.DEFAULT_SIZE);
-			}
-			break;
-		case 6:
-			if (Constants.INT_3 != bridgeDesigns.size()) {
-				bridgeDesigns = new ArrayList<BridgeDesign>(
-						Constants.DEFAULT_SIZE);
-			}
-			break;
-		case 8:
-			if (Constants.INT_4 != bridgeDesigns.size()) {
-				bridgeDesigns = new ArrayList<BridgeDesign>(
-						Constants.DEFAULT_SIZE);
-			}
-			break;
-		default:
+		if (totalBridges != source.getUnbuiltBridges()) {
 			bridgeDesigns = new ArrayList<BridgeDesign>(Constants.DEFAULT_SIZE);
 		}
 		return bridgeDesigns;

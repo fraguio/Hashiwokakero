@@ -28,11 +28,11 @@ import java.net.URL;
 import es.fraguio.hashiwokakero.board.Board;
 import es.fraguio.hashiwokakero.board.BoardFactory;
 import es.fraguio.hashiwokakero.board.validator.FileFormatException;
-import es.fraguio.hashiwokakero.strategy.AlternativeSolutionStrategy;
 import es.fraguio.hashiwokakero.strategy.BackTracking;
-import es.fraguio.hashiwokakero.strategy.bridgesnumber.BridgesNumberSolutionStrategy;
-import es.fraguio.hashiwokakero.strategy.incompleteisland.SourceEqualsTargetsSolutionStrategy;
-import es.fraguio.hashiwokakero.strategy.islandposition.IslandPositionSolutionStrategy;
+import es.fraguio.hashiwokakero.strategy.enhancer.SolutionStrategyChain;
+import es.fraguio.hashiwokakero.strategy.enhancer.bridgesnumber.BridgesNumberSolutionStrategy;
+import es.fraguio.hashiwokakero.strategy.enhancer.incompleteisland.SourceEqualsTargetsSolutionStrategy;
+import es.fraguio.hashiwokakero.strategy.enhancer.islandposition.IslandPositionSolutionStrategy;
 
 /**
  * Clase principal. Recibe los argumentos de entrada y crea las estrategias de
@@ -131,7 +131,7 @@ public class Hashiwokakero {
 		if (args.length == 2 && "-o".equals(args[1])) {
 			// Se ejecutan las estrategias de optimización.
 			new IslandPositionSolutionStrategy().apply(board);
-			new AlternativeSolutionStrategy(
+			new SolutionStrategyChain(
 					new BridgesNumberSolutionStrategy(),
 					new SourceEqualsTargetsSolutionStrategy()).apply(board);
 		}

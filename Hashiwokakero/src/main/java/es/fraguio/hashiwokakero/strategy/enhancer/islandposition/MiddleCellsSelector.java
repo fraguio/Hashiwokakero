@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy.islandposition;
+package es.fraguio.hashiwokakero.strategy.enhancer.islandposition;
 
 import static es.fraguio.hashiwokakero.util.Constants.INT_8;
 import es.fraguio.hashiwokakero.board.cell.IslandCell;
 import es.fraguio.hashiwokakero.board.cell.enums.CellAlign;
-import es.fraguio.hashiwokakero.strategy.ISourceIslandSelector;
+import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
  * Estrategia de comienzo que selecciona aquellas islas que sabemos que tienen

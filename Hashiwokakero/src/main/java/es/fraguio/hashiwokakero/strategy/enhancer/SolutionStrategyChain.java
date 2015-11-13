@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy;
+package es.fraguio.hashiwokakero.strategy.enhancer;
 
 import es.fraguio.hashiwokakero.board.Board;
 
@@ -22,7 +22,7 @@ import es.fraguio.hashiwokakero.board.Board;
  * manera iterativa por ciclos completos, entendiendo por ciclo completo la
  * ejecución de todas las {@link ISolutionStrategy estrategias de solución} que
  * contiene una instancia de esta clase que recibe a través de su
- * {@link AlternativeSolutionStrategy#AlternativeSolutionStrategy(ISolutionStrategy...)
+ * {@link SolutionStrategyChain#AlternativeSolutionStrategy(ISolutionStrategy...)
  * constructor}. Esta estrategia de solución deja de {@link #apply(Board)
  * aplicarse} en el momento que un ciclo completo no es capaz que construir
  * ningún puente.
@@ -30,7 +30,7 @@ import es.fraguio.hashiwokakero.board.Board;
  * @author F1198 [Eduardo Nogueira Fraguío - fraguio@openmailbox.org]
  *
  */
-public class AlternativeSolutionStrategy implements ISolutionStrategy {
+public class SolutionStrategyChain implements ISolutionStrategy {
 
 	// ---------------------------------------------------- Instance Properties
 
@@ -49,7 +49,7 @@ public class AlternativeSolutionStrategy implements ISolutionStrategy {
 	 *            conjunto de estrategias de solución que se
 	 *            {@link #apply(Board) aplica}.
 	 */
-	public AlternativeSolutionStrategy(ISolutionStrategy... solutionStrategies) {
+	public SolutionStrategyChain(ISolutionStrategy... solutionStrategies) {
 		this.solutionStrategies = solutionStrategies;
 	}
 	

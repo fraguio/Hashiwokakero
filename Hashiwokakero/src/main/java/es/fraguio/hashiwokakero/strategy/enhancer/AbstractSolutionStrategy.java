@@ -13,13 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy;
+package es.fraguio.hashiwokakero.strategy.enhancer;
 
 import java.util.Iterator;
 import java.util.List;
 
 import es.fraguio.hashiwokakero.board.Board;
 import es.fraguio.hashiwokakero.board.cell.IslandCell;
+import es.fraguio.hashiwokakero.strategy.BridgeDesign;
 
 /**
  * Estrategia de solución abstracta que permita resolver total o parcialmente un

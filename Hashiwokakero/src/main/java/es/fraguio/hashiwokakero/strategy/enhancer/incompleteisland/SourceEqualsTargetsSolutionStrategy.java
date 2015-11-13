@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy.incompleteisland;
+package es.fraguio.hashiwokakero.strategy.enhancer.incompleteisland;
 
-import es.fraguio.hashiwokakero.strategy.AbstractSolutionStrategy;
-import es.fraguio.hashiwokakero.strategy.IBridgeDesigner;
-import es.fraguio.hashiwokakero.strategy.ISourceIslandSelector;
+import es.fraguio.hashiwokakero.strategy.enhancer.AbstractSolutionStrategy;
+import es.fraguio.hashiwokakero.strategy.enhancer.IBridgeDesigner;
+import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
  * @author Eduardo Nogueira Fraguío

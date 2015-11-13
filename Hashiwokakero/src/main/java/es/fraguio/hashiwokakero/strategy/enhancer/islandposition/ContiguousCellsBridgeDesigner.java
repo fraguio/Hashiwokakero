@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy.islandposition;
+package es.fraguio.hashiwokakero.strategy.enhancer.islandposition;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ import es.fraguio.hashiwokakero.board.cell.IslandCell;
 import es.fraguio.hashiwokakero.board.cell.enums.Direction;
 import es.fraguio.hashiwokakero.board.cell.exception.CellException;
 import es.fraguio.hashiwokakero.strategy.BridgeDesign;
-import es.fraguio.hashiwokakero.strategy.IBridgeDesigner;
+import es.fraguio.hashiwokakero.strategy.enhancer.IBridgeDesigner;
 import es.fraguio.hashiwokakero.util.Constants;
 
 /**

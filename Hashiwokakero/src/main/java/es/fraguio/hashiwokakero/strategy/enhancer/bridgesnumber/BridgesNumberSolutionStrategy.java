@@ -13,23 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy.islandposition;
+package es.fraguio.hashiwokakero.strategy.enhancer.bridgesnumber;
 
-import es.fraguio.hashiwokakero.strategy.AbstractSolutionStrategy;
-import es.fraguio.hashiwokakero.strategy.IBridgeDesigner;
-import es.fraguio.hashiwokakero.strategy.ISourceIslandSelector;
+import es.fraguio.hashiwokakero.strategy.enhancer.AbstractSolutionStrategy;
+import es.fraguio.hashiwokakero.strategy.enhancer.IBridgeDesigner;
+import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
  * @author Eduardo Nogueira Fraguío
  */
-public class IslandPositionSolutionStrategy extends AbstractSolutionStrategy {
+public class BridgesNumberSolutionStrategy extends AbstractSolutionStrategy {
 
 	// ----------------------------------------------------------- Constructors
 
 	/**
-	 * Constructor.
+	 * Constructor privado que impide que se creen instancias de la clase desde
+	 * fuera de la misma.
 	 */
-	public IslandPositionSolutionStrategy() {
+	public BridgesNumberSolutionStrategy() {
 		super();
 	}
 
@@ -40,15 +41,13 @@ public class IslandPositionSolutionStrategy extends AbstractSolutionStrategy {
 	 */
 	@Override
 	protected IBridgeDesigner getBridgeDesigner() {
-		return ContiguousCellsBridgeDesigner.INSTANCE;
-
+		return BridgesNumberBridgeDesigner.INSTANCE;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	protected ISourceIslandSelector[] getSourceSelectionStrategies() {
-		return new ISourceIslandSelector[] { MiddleCellsSelector.INSTANCE,
-				CornersCellsSelector.INSTANCE, LateralCellsSelector.INSTANCE };
+		return new ISourceIslandSelector[] { UnbuiltBridgesNumberSelector.INSTANCE };
 	}
 }

@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy.incompleteisland;
+package es.fraguio.hashiwokakero.strategy.enhancer.incompleteisland;
 
 import es.fraguio.hashiwokakero.board.cell.IslandCell;
-import es.fraguio.hashiwokakero.strategy.ISourceIslandSelector;
+import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 
 /**
  * Implementación de {@link ISourceIslandSelector} que forma parte de la

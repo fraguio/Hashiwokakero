@@ -13,12 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy.bridgesnumber;
+package es.fraguio.hashiwokakero.strategy.enhancer.bridgesnumber;
 
 import java.math.BigDecimal;
 
 import es.fraguio.hashiwokakero.board.cell.IslandCell;
-import es.fraguio.hashiwokakero.strategy.ISourceIslandSelector;
+import es.fraguio.hashiwokakero.strategy.enhancer.ISourceIslandSelector;
 import es.fraguio.hashiwokakero.util.Constants;
 
 /**

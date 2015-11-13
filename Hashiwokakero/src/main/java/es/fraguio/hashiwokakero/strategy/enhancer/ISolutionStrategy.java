@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package es.fraguio.hashiwokakero.strategy;
+package es.fraguio.hashiwokakero.strategy.enhancer;
 
 import es.fraguio.hashiwokakero.board.Board;
+import es.fraguio.hashiwokakero.strategy.BridgeDesign;
 
 /**
  * Define una estrategia de solución.
