@@ -11,3 +11,6 @@ La implementación se realiza teniendo en cuenta todos los requerimientos descri
 
 La solución se [implementa](https://github.com/fraguio/Hashiwokakero/blob/master/Hashiwokakero/src/main/java/es/fraguio/hashiwokakero/strategy/BackTracking.java) mediante la estrategia de [backtracking](https://es.wikipedia.org/wiki/Vuelta_atr%C3%A1s) además de otros [algoritmos de optimización](https://github.com/fraguio/Hashiwokakero/tree/master/Hashiwokakero/src/main/java/es/fraguio/hashiwokakero/strategy/enhancer) de tiempos en la búsqueda de la solución.
 
+# Javadoc
+
+Se puede consultar en [este enlace](https://fraguio.github.io/Hashiwokakero/javadoc/index.html)
